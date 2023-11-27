@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 .col {
     position: relative;
     width: 100%;
@@ -12,8 +14,8 @@
     @media (min-width: if($breakpoint == sm, 576px, if($breakpoint == md, 768px, if($breakpoint == lg, 992px, 1200px)))) {
         @for $size from 1 through 12 {
             .col-#{$breakpoint}-#{$size} {
-                flex: 0 0 percentage($size / 12);
-                max-width: percentage($size / 12);
+                flex: 0 0 percentage(math.div($size, 12)); // 使用 math.div()
+                max-width: percentage(math.div($size, 12)); // 使用 math.div()
             }
         }
     }
