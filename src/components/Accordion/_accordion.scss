@@ -1,0 +1,10 @@
+.accordion-title {
+    cursor: pointer;
+    @extend .frame;
+}
+
+.accordion-collapse {
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    @extend .frame;
+}

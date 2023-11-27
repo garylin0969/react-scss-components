@@ -1,0 +1,20 @@
+.col {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 1 0 100%;
+    max-width: 100%;
+    @extend .frame;
+}
+
+@each $breakpoint in sm, md, lg, xl {
+    @media (min-width: if($breakpoint == sm, 576px, if($breakpoint == md, 768px, if($breakpoint == lg, 992px, 1200px)))) {
+        @for $size from 1 through 12 {
+            .col-#{$breakpoint}-#{$size} {
+                flex: 0 0 percentage($size / 12);
+                max-width: percentage($size / 12);
+            }
+        }
+    }
+}
