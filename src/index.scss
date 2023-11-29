@@ -21,3 +21,31 @@ button {
 @import './components/Col/col';
 @import './components/Container/container';
 @import './components/Modal/modal';
+
+.tabs {
+    .tab-list {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        border-bottom: 1px solid #ccc;
+
+        .tab-list-item {
+            padding: 10px;
+            cursor: pointer;
+
+            &.tab-list-active {
+                border-bottom: 2px solid #007bff;
+            }
+        }
+    }
+
+    .tab-content {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-top: none;
+    }
+
+    .tab-panel {
+        // 你可以在這裡添加你的樣式
+    }
+}
